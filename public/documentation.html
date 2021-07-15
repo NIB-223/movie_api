@@ -11,5 +11,60 @@
     This is a web application for people interested in movies.  It will feature a database of information inclding  generes, directors etc.  
     Users will also have the ability to sign up and post personal information along with lists of their favorite movies.
 
+    <table>
+        <thead>
+            <tr>
+                <th>REQUEST</th>
+                <th>URL</th>
+                <th>HTTP METHOD</th>
+                <tr>
+                    <td>Get a list of all movies</td>
+                    <td>/movies</td>
+                    <td>GET</td>
+                  </tr>
+                  <tr>
+                    <td>Get data(descr, genre, director, <br>imageURL, featured or no) by title</td>
+                    <td>/movies/[title]</td>
+                    <td>GET</td>
+                  </tr>
+                  <tr>
+                    <td>Get data about genre by title</td>
+                    <td>/movies/genre/[title]</td>
+                    <td>GET</td>
+                  </tr>
+                  <tr>
+                    <td>get data about director by name</td>
+                    <td>/movies/director/[name]</td>
+                    <td>GET</td>
+                  </tr>
+                  <tr>
+                    <td>add user (regist)</td>
+                    <td>/users</td>
+                    <td>POST</td>
+                  </tr>
+                  <tr>
+                    <td>users update their info</td>
+                    <td>/users[info]/[username]</td>
+                    <td>PUT</td>
+                  </tr>
+                  <tr>
+                    <td>users add movie to fav list</td>
+                    <td>/users[info]/favorites</td>
+                    <td>POST</td>
+                  </tr>
+                  <tr>
+                    <td>users remove movie from fav list</td>
+                    <td>/users[info]/favorites</td>
+                    <td>DELETE</td>
+                  </tr>
+                  <tr>
+                    <td>users deregister</td>
+                    <td>/users</td>
+                    <td>DELETE</td>
+                  </tr>
+            </tr>
+        </thead>
+    </table>
+
 </body>
 </html>
