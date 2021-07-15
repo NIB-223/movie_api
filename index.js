@@ -70,15 +70,15 @@ app.get('/', (req, res) => {
 });
 
 //Get data(descr, genre, director, imageURL, featured or no) by title
-app.get('/movies/:title', (req, res) => {
+app.get('/movies/title', (req, res) => {
     res.send('Successful GET request returning data for movie')
-    // res.json(movies.find((movie) => { return movie.title === req.params.title }));
+    res.json(movies.find((movie) => { return movie.title === req.params.title }));
 });
 
 //Get data about genre by title
-app.get('/movies/:title/genre', (req, res) => {
+app.get('/movies/genre', (req, res) => {
     res.send('Successful GET request returning data genre')
-    // res.json(movies.find((movie) => { return movie.title === req.params.title }));
+    res.json(movies.find((movie) => { return movie.genre === req.params.genre }));
 });
 
 //get data about director by name
