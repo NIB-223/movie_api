@@ -14,54 +14,54 @@ app.use(bodyParser.json());
 // Top Ten Movies Data
 const movies = [
     {
-        title: 'A Clockwork Orange',
-        director: 'Stanley Kubrick',
-        genre: 'Crime/Drama'
+        title: 'Silence of the Lambs',
+        director: 'Robert Jonathan Demme',
+        genre: 'Thriller'
     },
     {
-        title: 'Shawshank Redemption',
-        director: 'Frank Darabont',
-        genre: 'Crime/Drama'
+        title: 'Philadelphia',
+        director: 'Robert Jonathan Demme[ol, k1234m 213',
+        genre: 'Drama'
     },
     {
-        title: 'Saving Private Ryan',
+        title: 'War of the Worlds',
         director: 'Steven Spielberg',
-        genre: 'War/Action'
+        genre: 'Sci-Fi'
     },
     {
-        title: 'Willy Wonka and the Chocolate Factory',
-        director: 'Mel Stuart',
-        genre: 'Family/Fantasy'
+        title: 'Step Brothers',
+        director: 'Judd Apatow',
+        genre: 'Comedy'
     },
     {
-        title: 'Don\'t Breathe',
-        director: 'Fede Álvarez',
-        genre: 'Horror/Thriller'
+        title: 'Bridesmaids',
+        director: 'Judd Apatow',
+        genre: 'Comedy'
     },
     {
-        title: 'Deliverance',
+        title: 'Talladega Nights: The Ballad of Ricky Bobby',
         director: 'John Booman',
         genre: 'Adventurw/Drama'
     },
     {
-        title: 'Disturbia',
-        director: 'DJ. Caruso',
-        genre: 'Thriller'
+        title: 'Pulp Fiction',
+        director: 'Quentin Tarantino',
+        genre: 'Crime'
     },
     {
-        title: 'Insidious',
-        director: 'James Wan',
-        genre: 'Horror'
+        title: 'Kill Bill Vol. 1',
+        director: 'Quentin Tarantino',
+        genre: 'Action'
     },
     {
-        title: 'Rudy',
-        director: 'David Anspaugh',
-        genre: 'Sports/Drama'
+        title: 'From Dusk Till Dawn',
+        director: 'Quentin Tarantino',
+        genre: 'Action'
     },
     {
-        title: 'Alone',
-        director: 'John Hyams',
-        genre: 'Psychological Horror'
+        title: 'Jurassic Park',
+        director: 'Steven Spielberg',
+        genre: 'Sci-Fi'
     },
 ]
 //Get a list of all movies
