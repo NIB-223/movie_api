@@ -30,11 +30,11 @@
 
 
                   <tr>
-                    <td>Get data(descr, genre, director, <br>imageURL, featured or no) by title</td>
+                    <td>Get data(descr, genre, director, <br>imageURL, featured or not) by title</td>
                     <td>/movies/[title]</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>JSON objcect holding data about a single movie, containing title, description, genre, director, img, and feateud or not. EX: <br>
+                    <td>JSON objcect holding data about a single movie, containing title, description, genre, director, img, and featured or not. EX: <br>
                                                                                                                                      { <br>
                                                                                                                                       title:<br>
                                                                                                                                       dscr: <br>
@@ -49,7 +49,7 @@
 
                   <tr>
                     <td>Get data about genre by title</td>
-                    <td>/movies/genre/[name]</td>
+                    <td>/movies/genre/[title]</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>posts description about genre title</td>
@@ -77,7 +77,7 @@
                       <br> {
                                                                                                <br> Username: "Sam Gould"<br>
                                                                                                 Password: "password123"<br>
-                                                                                                Email: email@emaiul.com<br>
+                                                                                                Email: email@email.com<br>
                                                                                                 Birthdate: 01-01-2001 <br>
                                                                                                 FavoriteMovie: Bridesmaids<br>
                       }                             
@@ -88,7 +88,7 @@
                                                                                               UserID: 69697979 <br>
                                                                                                Username: "Sam Gould"<br>
                                                                                                 Password: "password123"<br>
-                                                                                                Email: email@emaiul.com<br>
+                                                                                                Email: email@email.com<br>
                                                                                                 Birthdate: 01-01-2001 <br>
                                                                                                 FavoriteMovie: Bridesmaids<br>
                       }                             
@@ -107,7 +107,7 @@
 
                   <tr>
                     <td>users add movie to fav list</td>
-                    <td>/users/FavoriteMovie/[tile]</td>
+                    <td>/users/[Username]/FavoriteMovies/[movieID]</td>
                     <td>POST</td>
                     <td>JSON object holding data about user's fav movie to be added:<br>
                                                                    
@@ -120,14 +120,14 @@
                                                                                     id: 5858585
                                                                                     name: Bridesmaids
                                                                                     id: 565656
-                                                                                    moveis: Step Brothers
+                                                                                    title: Step Brothers
                     </td>
                   </tr>
 
 
                   <tr>
                     <td>users remove movie from fav list</td>
-                    <td>/users/FavoriteMovie/[title]</td>
+                    <td>/users/[Username]/FavoriteMovies/[movieID]</td>
                     <td>DELETE</td>
                     <td>None</td>
                     <td>message saying movie successfully removed
