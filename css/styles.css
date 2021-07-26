@@ -1,0 +1,17 @@
+  
+.methods-table {
+    width:80%;
+    margin-left:20px;
+    border-collapse: collapse;
+  }
+  .methods-table th {
+    background-color:rgb(176, 231, 238);
+    font-weight:600;
+    padding:5px;
+  }
+  .methods-table td {
+    padding:5px;
+  }
+  tr:nth-child(even) {
+    background-color:#dfdede;
+  }

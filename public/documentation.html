@@ -11,56 +11,136 @@
     This is a web application for people interested in movies.  It will feature a database of information inclding  generes, directors etc.  
     Users will also have the ability to sign up and post personal information along with lists of their favorite movies.
 
+
     <table>
         <thead>
             <tr>
                 <th>REQUEST</th>
                 <th>URL</th>
                 <th>HTTP METHOD</th>
+                <th>Request body data format</th>
+                <th>Response body data format</th>
                 <tr>
                     <td>Get a list of all movies</td>
                     <td>/movies</td>
                     <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about all movies</td>
                   </tr>
+
+
                   <tr>
                     <td>Get data(descr, genre, director, <br>imageURL, featured or no) by title</td>
                     <td>/movies/[title]</td>
                     <td>GET</td>
+                    <td>None</td>
+                    <td>JSON objcect holding data about a single movie, containing title, description, genre, director, img, and feateud or not. EX: <br>
+                                                                                                                                     { <br>
+                                                                                                                                      title:<br>
+                                                                                                                                      dscr: <br>
+                                                                                                                                      genre:<br>
+                                                                                                                                      director:<br>
+                                                                                                                                      img: <br>
+                                                                                                                                      featured: <br>
+                                                                                                                                     }           
+                    </td>
                   </tr>
+
+
                   <tr>
                     <td>Get data about genre by title</td>
-                    <td>/movies/genre/[title]</td>
+                    <td>/movies/genre/[name]</td>
                     <td>GET</td>
+                    <td>None</td>
+                    <td>posts description about genre title</td>
                   </tr>
+
+
                   <tr>
                     <td>get data about director by name</td>
                     <td>/movies/director/[name]</td>
                     <td>GET</td>
+                    <td>None</td>
+                    <td>JSON object holding info on directors, including name, bio, Birthdate.  EX: <br>
+                                                                                                    name: Quentin Tarantino <br>
+                                                                                                    bio: famous director <br>
+                                                                                                    birthdate: 1963 <br>
+                    </td>
                   </tr>
+
+
                   <tr>
                     <td>add user (regist)</td>
                     <td>/users</td>
                     <td>POST</td>
+                    <td>A JSON object holding data about the user to add, structured like:
+                      <br> {
+                                                                                               <br> Username: "Sam Gould"<br>
+                                                                                                Password: "password123"<br>
+                                                                                                Email: email@emaiul.com<br>
+                                                                                                Birthdate: 01-01-2001 <br>
+                                                                                                FavoriteMovie: Bridesmaids<br>
+                      }                             
+                    </td>
+                    <td>A JSON object holding data about the user that was added, structured like:
+                      <br> {
+                                                                                               <br> 
+                                                                                              UserID: 69697979 <br>
+                                                                                               Username: "Sam Gould"<br>
+                                                                                                Password: "password123"<br>
+                                                                                                Email: email@emaiul.com<br>
+                                                                                                Birthdate: 01-01-2001 <br>
+                                                                                                FavoriteMovie: Bridesmaids<br>
+                      }                             
+                    </td>
                   </tr>
+
+
                   <tr>
                     <td>users update their info</td>
-                    <td>/users[info]/[username]</td>
+                    <td>/users/[username]</td>
                     <td>PUT</td>
+                    <td>None</td>
+                    <td>message stating that info was updated</td>
                   </tr>
+
+
                   <tr>
                     <td>users add movie to fav list</td>
-                    <td>/users[info]/favorites</td>
+                    <td>/users/FavoriteMovie/[tile]</td>
                     <td>POST</td>
+                    <td>JSON object holding data about user's fav movie to be added:<br>
+                                                                   
+                                                                    {<br>
+                                                                      FavoriteMovie: Bridesmaids<br> 
+                                                                      FavoriteMovie: Step Brothers<br> 
+                                                                    }                        
+                    </td>
+                    <td>JSOn object with data about the movie that was added including ID <br>
+                                                                                    id: 5858585
+                                                                                    name: Bridesmaids
+                                                                                    id: 565656
+                                                                                    moveis: Step Brothers
+                    </td>
                   </tr>
+
+
                   <tr>
                     <td>users remove movie from fav list</td>
-                    <td>/users[info]/favorites</td>
+                    <td>/users/FavoriteMovie/[title]</td>
                     <td>DELETE</td>
+                    <td>None</td>
+                    <td>message saying movie successfully removed
+                    </td>
                   </tr>
+
+
                   <tr>
                     <td>users deregister</td>
-                    <td>/users</td>
+                    <td>/users/[Username]</td>
                     <td>DELETE</td>
+                    <td>None</td>
+                    <td>a msg saying a user was succefully removed</td>
                   </tr>
             </tr>
         </thead>
