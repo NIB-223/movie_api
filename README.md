@@ -24,7 +24,7 @@ This is a movie api that can be used to access a list of movie detials including
 
 ## API Endpoints
 
-    <div class="table-wrapper">
+<div class="table-wrapper">
         <table class="methods-table">
           <thead>
             <th>Request</th>
