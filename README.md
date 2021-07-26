@@ -20,6 +20,11 @@ This is a movie api that can be used to access a list of movie detials including
 - Node.js
 
 ## Dependencies
+- Express
+- eslint
+- mongoose
+- body-parser
+- morgan
 
 
 ## API Endpoints
@@ -40,7 +45,7 @@ This is a movie api that can be used to access a list of movie detials including
               <td>/movies</td>
               <td>- </td>
               <td>
-              {
+              <!-- {
               .."Title": "Waterworld",
               .."description": "In a future where the polar ice-caps have melted and Earth is almost entirely submerged, a mutated mariner fights starvation and outlaw ..\"smokers,\" and reluctantly helps a woman and a young girl try to find dry land.",
               .."genre": "609eab2d182950cee2ca2381",
@@ -48,17 +53,17 @@ This is a movie api that can be used to access a list of movie detials including
               .."_id": "609ec668182950cee2ca2392",
               .."imageUrl": "waterworld.png",
               .."featured": false
-              }
+              } -->
               </td>
             </tr>
             <tr>
               <td>Return available data about specific movie</td>
               <td>GET</td>
-              <td>/movies/[movie title] <br />e.g /movies/The%20Matrix</td>
+              <td>/movies/[movie title] <br />e.g /movies/Step Brothers</td>
               <td>- </td>
               <td>
-              {
-                .."Title": "The Matrix",
+              <!-- {
+                .."Title": "Step Brothers",
                 .."description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
                 .."genre": "609eab2d182950cee2ca2382",
                 .."director": "609eb15a182950cee2ca2387",
@@ -66,7 +71,7 @@ This is a movie api that can be used to access a list of movie detials including
                 .."_id": "609ec5f1182950cee2ca238f",
                 .."imageUrl": "matrix.png",
                 .."featured": true
-              }
+              } -->
               </td>
             </tr>
             <tr>
@@ -111,7 +116,7 @@ This is a movie api that can be used to access a list of movie detials including
               <td>- </td>
               <td>/users/[username]</td>
               <td>
-              {
+              <!-- {
                 "_id": "609ed5ca182950cee2ca2398",
                 "Username": "William",
                 "Password": (hashed password),
@@ -123,7 +128,7 @@ This is a movie api that can be used to access a list of movie detials including
                     "609ec5f1182950cee2ca238f",
                     "609ec5f1182950cee2ca2390"
                 ],
-                }
+                } -->
                 </td>
             </tr>
             <tr>
