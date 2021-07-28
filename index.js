@@ -15,8 +15,9 @@ mongoose.connect('mongodb://localhost:27017/myFlixDB', {
 const { response } = require('express');
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
-bodyParser = require('body-parser');
+// bodyParser = require('body-parser');
 uuid = require('uuid');
 
 
@@ -26,12 +27,22 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//import auth.js to index.js
+let auth = require('./auth')(app);
+
+//require and import passport
+const passport = require('passport');
+require('./passport');
+
+
+
+//Welcome message
 app.get("/", (req, res) => {
     res.send('Hello and Welcome to myFlix!');
 });
 
 //Get a list of all movies
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
