@@ -34,16 +34,16 @@
                   <td>/movies</td>
                   <td>GET</td>
                   <td>None</td>
-                  <td style="text-decoration: underline;">A JSON object holding data about all movies</td>
+                  <td style="text-decoration: underline;">A JSON object holding data about all movies.</td>
               </tr>
 
 
                 <tr class="table align-middle">
-                  <td>Return data about a movie by title.</td>
+                  <td>Return data about a movie by title</td>
                   <td>/movies/[title]</td>
                   <td>GET</td>
                   <td>None</td>
-                  <td><span  style="text-decoration: underline;">JSON objcect holding data about a single movie EX:</span> <br><br><br>
+                  <td><span  style="text-decoration: underline;">JSON object holding data about a single movie.</span>  <br><br><span style="text-decoration: underline;">Example:</span><br>
                     "Genre": {<br>
                       "Name": "Comedy",<br>
                       "Description": "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."<br>
@@ -72,7 +72,7 @@
                   <td>/genres/[Name]</td>
                   <td>GET</td>
                   <td>None</td>
-                  <td><span  style="text-decoration: underline;">JSON object holding data about a genre</span><br><br>
+                  <td><span  style="text-decoration: underline;">JSON object holding data about a genre. </span><br><br><span style="text-decoration: underline;">Example:</span><br>
                   "Genre": {<br>
                     "Name": "Action",<br>
                     "Description": "Action is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."<br>
@@ -94,10 +94,10 @@
 
                 <tr class="table align-middle">
                   <td>get data about director by name</td>
-                  <td>/director/[name]</td>
+                  <td>/directors/[name]</td>
                   <td>GET</td>
                   <td>None</td>
-                  <td><span  style="text-decoration: underline;">JSON object holding info on directors, including name, bio, Birthdate.  EX: </span><br><br>
+                  <td><span  style="text-decoration: underline;">JSON object holding info on a director's info (Name, Bio, Birth.) </span><br><br><span style="text-decoration: underline;">Example:</span><br>
                     "Genre": {<br>
                       "Name": "Comedy",<br>
                       "Description": "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."<br>
@@ -125,7 +125,7 @@
                 <td>/users</td>
                 <td>GET</td>
                 <td>None</td>
-                <td><span style="text-decoration: underline;">A JSON object holding data about all movies:</span><br><br>
+                <td><span style="text-decoration: underline;">A JSON object holding data about all users.</span> <br><br><span style="text-decoration: underline;">Example:</span><br>
                 [<br>
                 {<br>
                     "FavoriteMovies": [<br>
@@ -189,8 +189,8 @@
                 <td>Get user by Username</td>
                 <td>/users/[Username]</td>
                 <td>GET</td>
-                <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about user structured like:</span><br>
-                  <br> { <br>
+                <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about user.</span><br><br><span style="text-decoration: underline;">Example:</span><br>
+                  { <br>
                     "FavoriteMovies": [],<br>
                     "_id": "6100fd7faee68a4768aca544",<br>
                     "Username": "someguy123",<br>
@@ -205,7 +205,7 @@
                   <td>New users can register</td>
                   <td>/users</td>
                   <td>POST</td>
-                  <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about the user to add, structured like:</span><br><br>
+                  <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about the user to add.</span> <br><br><span style="text-decoration: underline;">Example:</span><br>
                      {<br>
                            Username: "johnnycage19"<br>
                            Password: "password123"<br>
@@ -214,8 +214,8 @@
                            FavoriteMovie: Bridesmaids<br>
                     }                             
                   </td>
-                  <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about the user that was added, structured like:</span><br>
-                    <br> {
+                  <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about the user that was added.</span><br><br><span style="text-decoration: underline;">Example:</span><br>
+                       {
                             <br> 
                             UserID: 69697979 <br>
                             Username: "johnnycage19"<br>
@@ -232,7 +232,7 @@
                   <td>users update their info by username</td>
                   <td>/users/[username]</td>
                   <td>PUT</td>
-                  <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about user's updated info, structured like:</span><br><br>
+                  <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about user's updated info.</span><br><br><span style="text-decoration: underline;">Example:</span><br>
                     {<br>
                       "Username" : "johnnycage19",<br>
                       "Password" : "mkombat",<br>
@@ -256,13 +256,13 @@
                   <td>users add movie to fav list</td>
                   <td>/users/[Username]/FavoriteMovies/[movieID]</td>
                   <td>POST</td>
-                  <td style="text-align: left!important;"><span style="text-decoration: underline;">JSON object holding data about user's fav movie to be added:</span><br><br>
+                  <td style="text-align: left!important;"><span style="text-decoration: underline;">JSON object holding data about user's fav movie to be added.</span><br><br><span style="text-decoration: underline;">Example:</span><br>
                                                                  
                                                                   {<br>
                                                                     FavoriteMovie: "60f225f53cd192c803c693cc"<br> 
                                                                   }                        
                   </td>
-                  <td><span style="text-decoration: underline;">JSON object with data about the movie that was added including ID </span><br><br>
+                  <td><span style="text-decoration: underline;">JSON object with data about the movie that was added including ID. </span><br><br><span style="text-decoration: underline;">Example:</span><br>
                     {<br>
                       "FavoriteMovies": [<br>
                           "60f226933cd192c803c693ce",<br>

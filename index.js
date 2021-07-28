@@ -57,8 +57,8 @@ app.get('/movies/:Title', (req, res) => {
 //Get data about genre by name
 app.get('/genres/:Name', (req, res) => {
     Movies.findOne({ 'Genre.Name': req.params.Name })
-        .then((genre) => {
-            res.json(genre);
+        .then((movie) => {
+            res.json(movie.Genre.Description); //only sends back object that contains director's info
         })
         .catch((err) => {
             console.error(err);
@@ -69,8 +69,8 @@ app.get('/genres/:Name', (req, res) => {
 //get data about director by name
 app.get('/directors/:Name', (req, res) => {
     Movies.findOne({ 'Director.Name': req.params.Name })
-        .then((director) => {
-            res.json(director);
+        .then((movie) => {
+            res.json(movie.director);//only sends back the object that contains director's info
         })
         .catch((err) => {
             console.error(err);
