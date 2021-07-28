@@ -2,12 +2,15 @@
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 
+//these refer to the model names 
 const Movies = Models.Movie;
 const Users = Models.User;
-const Directors = Models.Director;
-const Genres = Models.Genre;
 
-mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect('mongodb://localhost:27017/myFlixDB', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 const { response } = require('express');
 const express = require('express');
@@ -39,7 +42,7 @@ app.get('/movies', (req, res) => {
         });
 });
 
-//Get data(descr, genre, director, imageURL, featured or no) by title
+//Get data about a movie by title
 app.get('/movies/:Title', (req, res) => {
     Movies.findOne({ Title: req.params.Title })
         .then((movie) => {
@@ -52,8 +55,8 @@ app.get('/movies/:Title', (req, res) => {
 });
 
 //Get data about genre by name
-app.get('/Genre/:Name', (req, res) => {
-    Genres.findOne({ Name: req.params.Name })
+app.get('/genres/:Name', (req, res) => {
+    Movies.findOne({ 'Genre.Name': req.params.Name })
         .then((genre) => {
             res.json(genre);
         })
@@ -64,10 +67,10 @@ app.get('/Genre/:Name', (req, res) => {
 });
 
 //get data about director by name
-app.get('/Director/:Name', (req, res) => {
-    Directors.findOne({ Name: req.params.Name })
-        .then((nameDirector) => {
-            res.json(nameDirector);
+app.get('/directors/:Name', (req, res) => {
+    Movies.findOne({ 'Director.Name': req.params.Name })
+        .then((director) => {
+            res.json(director);
         })
         .catch((err) => {
             console.error(err);
@@ -112,7 +115,7 @@ app.post('/users/', (req, res) => {
                         Username: req.body.Username,
                         Password: req.body.Password,
                         Email: req.body.Email,
-                        Birthday: req.body.Birthday
+                        Birthdate: req.body.Birthdate
                     })
                     .then((user) => { res.status(201).json(user) })
                     .catch((error) => {
@@ -134,7 +137,7 @@ app.put('/users/:Username', (req, res) => {
             Username: req.body.Username,
             Password: req.body.Password,
             Email: req.body.Email,
-            Birthday: req.body.Birthday
+            Birthdate: req.body.Birthdate
         }
     },
         { new: true }, // This line makes sure that the updated document is returned
