@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Documentation</title>
 </head>
 <body>
@@ -11,272 +12,252 @@
     This is a web application for people interested in movies.  It will feature a database of information inclding  generes, directors etc.  
     Users will also have the ability to sign up and post personal information along with lists of their favorite movies.
 
-
+  <div class="table-responsive">
     <table>
-        <thead>
-            <tr>
-                <th>REQUEST</th>
-                <th>URL</th>
-                <th>HTTP METHOD</th>
-                <th>Request body data format</th>
-                <th>Response body data format</th>
-                <tr>
-                    <td>Get a list of all movies</td>
-                    <td>/movies</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>A JSON object holding data about all movies</td>
-                  </tr>
-
-
-                  <tr>
-                    <td>Return data about a movie by title.</td>
-                    <td>/movies/[title]</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>JSON objcect holding data about a single movie EX: <br>
-                      "Genre": {<br>
-                        "Name": "Comedy",<br>
-                        "Description": "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."<br>
-                    },<br>
-                    "Director": {<br>
-                        "Name": "Judd Apatow",<br>
-                        "Bio": "His movies are very funny.",<br>
-                        "Birth": "1967"<br>
-                    },<br>
-                    "Actors": [],<br>
-                    "_id": "60f2214a3cd192c803c693c9",<br>
-                    "Title": "Step Brothers",<br>
-                    "Description": "Two immature man-children have to live together because their succesful parents marry.",<br>
-                    "ImagePath": "stepbrothers.png",<br>
-                    "Featured": true,<br>
-                    "Judd Apatow": {<br>
-                        "Bio": "His movies are very funny."<br>
-                    }<br>
-                       
-                    </td>
-                  </tr>
-
-
-                  <tr>
-                    <td>Get data about genre by title</td>
-                    <td>/genres/[Name]</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>JSON object holding data about a genre</td><br>
-                    "Genre": {<br>
-                      "Name": "Action",<br>
-                      "Description": "Action is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."<br>
-                  },<br>
-                  "Director": {<br>
-                      "Name": "Quentin Tarantino",<br>
-                      "Bio": "an American film director, screenwriter, producer, author and actor. His films are characterized by nonlinear storylines, dark humor, stylized violence, extended dialogue, ensemble casts, references to popular culture, alternate history, and neo-noir.",<br>
-                      "Birth": "1963"<br>
-                  },<br>
-                  "Actors": [],<br>
-                  "_id": "60f225f53cd192c803c693cd",<br>
-                  "Title": "Kill Bill Vol.1",<br>
-                  "Description": "After awakening from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her.",<br>
-                  "ImagePath": "killbill.png",<br>
-                  "Featured": true<br>
-                  </tr>
-
-
-                  <tr>
-                    <td>get data about director by name</td>
-                    <td>/movies/director/[name]</td>
-                    <td>GET</td>
-                    <td>None</td>
-                    <td>JSON object holding info on directors, including name, bio, Birthdate.  EX: <br>
-                      "Genre": {<br>
-                        "Name": "Comedy",<br>
-                        "Description": "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."<br>
-                    },<br>
-                    "Director": {<br>
-                        "Name": "Judd Apatow",<br>
-                        "Bio": "His movies are very funny.",<br>
-                        "Birth": "1967"<br>
-                    },<br>
-                    "Actors": [],<br>
-                    "_id": "60f2214a3cd192c803c693c9",<br>
-                    "Title": "Step Brothers",<br>
-                    "Description": "Two immature man-children have to live together because their succesful parents marry.",<br>
-                    "ImagePath": "stepbrothers.png",<br>
-                    "Featured": true,<br>
-                    "Judd Apatow": {<br>
-                        "Bio": "His movies are very funny."<br>
-                    }<br>
-                                               
-                    </td>
-                  </tr>
-
-                  <td>Get a list of all users</td>
-                  <td>/users</td>
+      <thead>
+          <tr>
+              <th>REQUEST</th>
+              <th>URL</th>
+              <th>HTTP METHOD</th>
+              <th>Request body data format</th>
+              <th>Response body data format</th>
+              <tr>
+                  <td>Get a list of all movies</td>
+                  <td>/movies</td>
                   <td>GET</td>
                   <td>None</td>
-                  <td>A JSON object holding data about all movies:<br></td>
-                  [<br>
-                  {<br>
-                      "FavoriteMovies": [<br>
-                          "60f225f53cd192c803c693cd",<br>
-                          "60f225f53cd192c803c693cc"<br>
-                      ],<br>
-                      "_id": "60f22aa93cd192c803c693d1",<br>
-                      "Username": "johnnycage19",<br>
-                      "Password": "mkombat",<br>
-                      "Email": "myueamil23@gmail.com",<br>
-                      "Birthdate": "1995-05-04T00:00:00.000Z",<br>
-                      "Birthday": "2001-09-09T05:00:00.000Z"<br>
-                  },<br>
-                  {<br>
-                      "FavoriteMovies": [<br>
-                          "60f221e33cd192c803c693cb"<br>
-                      ],<br>
-                      "_id": "60f22bd93cd192c803c693d3",<br>
-                      "Username": "movieloves19191",<br>
-                      "Password": "inferno2333",<br>
-                      "Email": "movieloves@gmail.com",<br>
-                      "Birthdate": "1966-03-19T00:00:00.000Z"<br>
-                  },<br>
-                  {<br>
-                      "FavoriteMovies": [<br>
-                          "60f2219d3cd192c803c693ca"<br>
-                      ],<br>
-                      "_id": "60f22c533cd192c803c693d4",<br>
-                      "Username": "johnnycage19",<br>
-                      "Password": "mkombat",<br>
-                      "Email": "myueamil23@gmail.com",<br>
-                      "Birthdate": "2006-11-18T00:00:00.000Z",<br>
-                      "Birthday": "2001-09-09T05:00:00.000Z"<br>
-                  },<br>
-                  {<br>
-                      "FavoriteMovies": [<br>
-                          "60f226933cd192c803c693ce",<br>
-                          "60f2219d3cd192c803c693ca",<br>
-                          "60f225f53cd192c803c693cc",<br>
-                          "60f225f53cd192c803c693cc"<br>
-                      ],<br>
-                      "_id": "60f2398b3cd192c803c693d5",<br>
-                      "Username": "davidcohen2580",<br>
-                      "Password": "test123",<br>
-                      "Email": "davidcohen@gmail.com",<br>
-                      "Birthdate": "1988-09-10T00:00:00.000Z"<br>
-                  },<br>
-                  {<br>
-                      "FavoriteMovies": [],<br>
-                      "_id": "6100fd7faee68a4768aca544",<br>
-                      "Username": "someguy123",<br>
-                      "Password": "r0dfdfdf4e4",<br>
-                      "Email": "myueamil23@gmail.com",<br>
-                      "__v": 0<br>
-                  }<br>
-              ]<br>
-                </tr>
+                  <td>A JSON object holding data about all movies</td>
+              </tr>
+
 
                 <tr>
-                  <td>Get user by Username</td>
-                  <td>/users/[Username]</td>
+                  <td>Return data about a movie by title.</td>
+                  <td>/movies/[title]</td>
                   <td>GET</td>
-                  <td>A JSON object holding data about user structured like:
-                    <br> { <br>
-                      "FavoriteMovies": [],<br>
-                      "_id": "6100fd7faee68a4768aca544",<br>
-                      "Username": "someguy123",<br>
-                      "Password": "r0dfdfdf4e4",<br>
-                      "Email": "myueamil23@gmail.com",<br>
-                      "__v": 0<br>
-                  }  <br> 
+                  <td>None</td>
+                  <td>JSON objcect holding data about a single movie EX: <br>
+                    "Genre": {<br>
+                      "Name": "Comedy",<br>
+                      "Description": "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."<br>
+                  },<br>
+                  "Director": {<br>
+                      "Name": "Judd Apatow",<br>
+                      "Bio": "His movies are very funny.",<br>
+                      "Birth": "1967"<br>
+                  },<br>
+                  "Actors": [],<br>
+                  "_id": "60f2214a3cd192c803c693c9",<br>
+                  "Title": "Step Brothers",<br>
+                  "Description": "Two immature man-children have to live together because their succesful parents marry.",<br>
+                  "ImagePath": "stepbrothers.png",<br>
+                  "Featured": true,<br>
+                  "Judd Apatow": {<br>
+                      "Bio": "His movies are very funny."<br>
+                  }<br>
+                     
                   </td>
                 </tr>
 
-                  <tr>
-                    <td>New users can register</td>
-                    <td>/users</td>
-                    <td>POST</td>
-                    <td>A JSON object holding data about the user to add, structured like:<br>
-                       {<br>
-                            <br> Username: "johnnycage19"<br>
-                             Password: "password123"<br>
-                             Email: email@email.com<br>
-                             Birthdate: 01-01-2001 <br>
-                             FavoriteMovie: Bridesmaids<br>
-                      }                             
-                    </td>
-                    <td>A JSON object holding data about the user that was added, structured like:
-                      <br> {
-                              <br> 
-                              UserID: 69697979 <br>
-                              Username: "johnnycage19"<br>
-                              Password: "password123"<br>
-                              Email: email@email.com<br>
-                              Birthdate: 01-01-2001 <br>
-                              FavoriteMovie: Bridesmaids<br>
-                      }                             
-                    </td>
-                  </tr>
+
+                <tr>
+                  <td>Get data about genre by title</td>
+                  <td>/genres/[Name]</td>
+                  <td>GET</td>
+                  <td>None</td>
+                  <td>JSON object holding data about a genre</td><br>
+                  "Genre": {<br>
+                    "Name": "Action",<br>
+                    "Description": "Action is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."<br>
+                },<br>
+                "Director": {<br>
+                    "Name": "Quentin Tarantino",<br>
+                    "Bio": "an American film director, screenwriter, producer, author and actor. His films are characterized by nonlinear storylines, dark humor, stylized violence, extended dialogue, ensemble casts, references to popular culture, alternate history, and neo-noir.",<br>
+                    "Birth": "1963"<br>
+                },<br>
+                "Actors": [],<br>
+                "_id": "60f225f53cd192c803c693cd",<br>
+                "Title": "Kill Bill Vol.1",<br>
+                "Description": "After awakening from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her.",<br>
+                "ImagePath": "killbill.png",<br>
+                "Featured": true<br>
+                </tr>
 
 
-                  <tr>
-                    <td>users update their info by username</td>
-                    <td>/users/[username]</td>
-                    <td>PUT</td>
-                    <td>A JSON object holding data about user's updated info, structured like:<br>
-                      {
-                        "Username" : "johnnycage19",
-                        "Password" : "mkombat",
-                        "Email": "myueamil23@gmail.com",
-                        "Birthdate": "09/09/2001"
-                    }
-                    </td>
-                    <td>{ <br>
-                      "FavoriteMovies": [],
-                      "_id" : "6100cc43f9ce761e48240b08",
-                      "Username" : "johnnycage19",<br>
-                      "Password" : "mkombat",<br>
-                      "Email": "myueamil23@gmail.com",<br>
-                      "Birthdate": "2001-09-09T05:00:00.000Z",<br>
-                      "__v": 0<br>
-                  }</td>
-                  </tr>
+                <tr>
+                  <td>get data about director by name</td>
+                  <td>/movies/director/[name]</td>
+                  <td>GET</td>
+                  <td>None</td>
+                  <td>JSON object holding info on directors, including name, bio, Birthdate.  EX: <br>
+                    "Genre": {<br>
+                      "Name": "Comedy",<br>
+                      "Description": "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."<br>
+                  },<br>
+                  "Director": {<br>
+                      "Name": "Judd Apatow",<br>
+                      "Bio": "His movies are very funny.",<br>
+                      "Birth": "1967"<br>
+                  },<br>
+                  "Actors": [],<br>
+                  "_id": "60f2214a3cd192c803c693c9",<br>
+                  "Title": "Step Brothers",<br>
+                  "Description": "Two immature man-children have to live together because their succesful parents marry.",<br>
+                  "ImagePath": "stepbrothers.png",<br>
+                  "Featured": true,<br>
+                  "Judd Apatow": {<br>
+                      "Bio": "His movies are very funny."<br>
+                  }<br>
+                                             
+                  </td>
+                </tr>
+
+                <td>Get a list of all users</td>
+                <td>/users</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>A JSON object holding data about all movies:<br></td>
+                [<br>
+                {<br>
+                    "FavoriteMovies": [<br>
+                        "60f225f53cd192c803c693cd",<br>
+                        "60f225f53cd192c803c693cc"<br>
+                    ],<br>
+                    "_id": "60f22aa93cd192c803c693d1",<br>
+                    "Username": "johnnycage19",<br>
+                    "Password": "mkombat",<br>
+                    "Email": "myueamil23@gmail.com",<br>
+                    "Birthdate": "1995-05-04T00:00:00.000Z",<br>
+                    "Birthday": "2001-09-09T05:00:00.000Z"<br>
+                },<br>
+                {<br>
+                    "FavoriteMovies": [<br>
+                        "60f221e33cd192c803c693cb"<br>
+                    ],<br>
+                    "_id": "60f22bd93cd192c803c693d3",<br>
+                    "Username": "movieloves19191",<br>
+                    "Password": "inferno2333",<br>
+                    "Email": "movieloves@gmail.com",<br>
+                    "Birthdate": "1966-03-19T00:00:00.000Z"<br>
+                },<br>
+                {<br>
+                    "FavoriteMovies": [<br>
+                        "60f2219d3cd192c803c693ca"<br>
+                    ],<br>
+                    "_id": "60f22c533cd192c803c693d4",<br>
+                    "Username": "johnnycage19",<br>
+                    "Password": "mkombat",<br>
+                    "Email": "myueamil23@gmail.com",<br>
+                    "Birthdate": "2006-11-18T00:00:00.000Z",<br>
+                    "Birthday": "2001-09-09T05:00:00.000Z"<br>
+                },<br>
+                {<br>
+                    "FavoriteMovies": [<br>
+                        "60f226933cd192c803c693ce",<br>
+                        "60f2219d3cd192c803c693ca",<br>
+                        "60f225f53cd192c803c693cc",<br>
+                        "60f225f53cd192c803c693cc"<br>
+                    ],<br>
+                    "_id": "60f2398b3cd192c803c693d5",<br>
+                    "Username": "davidcohen2580",<br>
+                    "Password": "test123",<br>
+                    "Email": "davidcohen@gmail.com",<br>
+                    "Birthdate": "1988-09-10T00:00:00.000Z"<br>
+                },<br>
+                {<br>
+                    "FavoriteMovies": [],<br>
+                    "_id": "6100fd7faee68a4768aca544",<br>
+                    "Username": "someguy123",<br>
+                    "Password": "r0dfdfdf4e4",<br>
+                    "Email": "myueamil23@gmail.com",<br>
+                    "__v": 0<br>
+                }<br>
+            ]<br>
+              </tr>
+
+              <tr>
+                <td>Get user by Username</td>
+                <td>/users/[Username]</td>
+                <td>GET</td>
+                <td>A JSON object holding data about user structured like:
+                  <br> { <br>
+                    "FavoriteMovies": [],<br>
+                    "_id": "6100fd7faee68a4768aca544",<br>
+                    "Username": "someguy123",<br>
+                    "Password": "r0dfdfdf4e4",<br>
+                    "Email": "myueamil23@gmail.com",<br>
+                    "__v": 0<br>
+                }  <br> 
+                </td>
+              </tr>
+
+                <tr>
+                  <td>New users can register</td>
+                  <td>/users</td>
+                  <td>POST</td>
+                  <td>A JSON object holding data about the user to add, structured like:<br>
+                     {<br>
+                          <br> Username: "johnnycage19"<br>
+                           Password: "password123"<br>
+                           Email: email@email.com<br>
+                           Birthdate: 01-01-2001 <br>
+                           FavoriteMovie: Bridesmaids<br>
+                    }                             
+                  </td>
+                  <td>A JSON object holding data about the user that was added, structured like:
+                    <br> {
+                            <br> 
+                            UserID: 69697979 <br>
+                            Username: "johnnycage19"<br>
+                            Password: "password123"<br>
+                            Email: email@email.com<br>
+                            Birthdate: 01-01-2001 <br>
+                            FavoriteMovie: Bridesmaids<br>
+                    }                             
+                  </td>
+                </tr>
 
 
-                  <tr>
-                    <td>users add movie to fav list</td>
-                    <td>/users/[Username]/FavoriteMovies/[movieID]</td>
-                    <td>POST</td>
-                    <td>JSON object holding data about user's fav movie to be added:<br>
-                                                                   
-                                                                    {<br>
-                                                                      FavoriteMovie: "60f225f53cd192c803c693cc"<br> 
-                                                                     <br> 
-                                                                    }                        
-                    </td>
-                    <td>JSOn object with data about the movie that was added including ID <br>
-                      {<br>
-                        "FavoriteMovies": [<br>
-                            "60f226933cd192c803c693ce",<br>
-                            "60f2219d3cd192c803c693ca",<br>
-                            "60f225f53cd192c803c693cc"<br>
-                        ],<br>
-                        "_id": "60f2398b3cd192c803c693d5",<br>
-                        "Username": "davidcohen2580",<br>
-                        "Password": "test123",<br>
-                        "Email": "davidcohen@gmail.com",<br>
-                        "Birthdate": "1988-09-10T00:00:00.000Z"<br>
-                    }
-                    </td>
-                  </tr>
+                <tr>
+                  <td>users update their info by username</td>
+                  <td>/users/[username]</td>
+                  <td>PUT</td>
+                  <td>A JSON object holding data about user's updated info, structured like:<br>
+                    {
+                      "Username" : "johnnycage19",
+                      "Password" : "mkombat",
+                      "Email": "myueamil23@gmail.com",
+                      "Birthdate": "09/09/2001"
+                  }
+                  </td>
+                  <td>{ <br>
+                    "FavoriteMovies": [],
+                    "_id" : "6100cc43f9ce761e48240b08",
+                    "Username" : "johnnycage19",<br>
+                    "Password" : "mkombat",<br>
+                    "Email": "myueamil23@gmail.com",<br>
+                    "Birthdate": "2001-09-09T05:00:00.000Z",<br>
+                    "__v": 0<br>
+                }</td>
+                </tr>
 
 
-                  <tr>
-                    <td>users remove movie from fav list</td>
-                    <td>/users/[Username]/FavoriteMovies/[movieID]</td>
-                    <td>DELETE</td>
-                    <td>None</td>
-                    <td>        {<br>
+                <tr>
+                  <td>users add movie to fav list</td>
+                  <td>/users/[Username]/FavoriteMovies/[movieID]</td>
+                  <td>POST</td>
+                  <td>JSON object holding data about user's fav movie to be added:<br>
+                                                                 
+                                                                  {<br>
+                                                                    FavoriteMovie: "60f225f53cd192c803c693cc"<br> 
+                                                                   <br> 
+                                                                  }                        
+                  </td>
+                  <td>JSOn object with data about the movie that was added including ID <br>
+                    {<br>
                       "FavoriteMovies": [<br>
                           "60f226933cd192c803c693ce",<br>
-                          "60f2219d3cd192c803c693ca"<br>
+                          "60f2219d3cd192c803c693ca",<br>
+                          "60f225f53cd192c803c693cc"<br>
                       ],<br>
                       "_id": "60f2398b3cd192c803c693d5",<br>
                       "Username": "davidcohen2580",<br>
@@ -284,20 +265,42 @@
                       "Email": "davidcohen@gmail.com",<br>
                       "Birthdate": "1988-09-10T00:00:00.000Z"<br>
                   }
-                    </td>
-                  </tr>
+                  </td>
+                </tr>
 
 
-                  <tr>
-                    <td>users deregister</td>
-                    <td>/users/[Username]</td>
-                    <td>DELETE</td>
-                    <td>None</td>
-                    <td>A message saying user has been removed.</td>
-                  </tr>
-            </tr>
-        </thead>
-    </table>
+                <tr>
+                  <td>users remove movie from fav list</td>
+                  <td>/users/[Username]/FavoriteMovies/[movieID]</td>
+                  <td>DELETE</td>
+                  <td>None</td>
+                  <td>        {<br>
+                    "FavoriteMovies": [<br>
+                        "60f226933cd192c803c693ce",<br>
+                        "60f2219d3cd192c803c693ca"<br>
+                    ],<br>
+                    "_id": "60f2398b3cd192c803c693d5",<br>
+                    "Username": "davidcohen2580",<br>
+                    "Password": "test123",<br>
+                    "Email": "davidcohen@gmail.com",<br>
+                    "Birthdate": "1988-09-10T00:00:00.000Z"<br>
+                }
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>users deregister</td>
+                  <td>/users/[Username]</td>
+                  <td>DELETE</td>
+                  <td>None</td>
+                  <td>A message saying user has been removed.</td>
+                </tr>
+          </tr>
+      </thead>
+  </table>
+  </div>
+    
 
 </body>
 </html>
