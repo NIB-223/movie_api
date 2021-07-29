@@ -81,7 +81,7 @@ app.get('/genres/:Name', passport.authenticate('jwt', { session: false }), (req,
 app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ 'Director.Name': req.params.Name })
         .then((movie) => {
-            res.json(movie.director);//only sends back the object that contains director's info
+            res.json(movie.Director);//only sends back the object that contains director's info
         })
         .catch((err) => {
             console.error(err);
