@@ -10,7 +10,7 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-const { check, validationRestult } = require('express-validator');
+const { check, validationResult } = require('express-validator');
 
 mongoose.connect('process.env.CONNECTION_URI', {
     useNewUrlParser: true,
