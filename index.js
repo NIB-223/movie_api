@@ -145,7 +145,7 @@ app.post('/users/',
         check('Email', 'Email does not appear to be valid').isEmail()
     ], (req, res) => {
         // check the validation object for errors
-        let errors = validationRestult(req);
+        let errors = validationResult(req);
 
         if (!errors.isEmpty()) {
             return res, status(422).json({ error: errors.array() });
