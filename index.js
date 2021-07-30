@@ -132,7 +132,7 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
 
 
 //add user (regist)
-app.post('/users/', passport.authenticate('jwt', { session: false }),
+app.post('/users/',
     // Validation logic here for request
     //you can either use a chain of methods like .not().isEmpty()
     //which means "opposite of isEmpty" in plain english "is not empty"
