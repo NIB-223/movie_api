@@ -1,6 +1,7 @@
+const bcrypt = require('bcrypt');
 //require mongose package and defines models(file)
 const mongoose = require('mongoose');
-const Models = require('./models.js');
+
 
 
 //connects mongoose to the db
