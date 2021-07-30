@@ -33,13 +33,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//import auth.js to index.js
-let auth = require('./auth')(app);
-
-//require and import passport
-const passport = require('passport');
-require('./passport');
-
+//CORS in express
 app.use(cors({
     origin: (origin, callback) => {
         if (!origin) return callback(null, true);
@@ -50,6 +44,14 @@ app.use(cors({
         return callback(null, true);
     }
 }));
+
+//import auth.js to index.js
+let auth = require('./auth')(app);
+
+//require and import passport
+const passport = require('passport');
+require('./passport');
+
 
 //Welcome message
 app.get("/", (req, res) => {
