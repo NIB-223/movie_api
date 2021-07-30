@@ -11,10 +11,11 @@ const Users = Models.User;
 
 const { check, validationResult } = require('express-validator');
 
-mongoose.connect('process.env.CONNECTION_URI', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+//the database is only accessible locally on my computer
+/* mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true}); */
+
+//connect database on the web
+mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const { response } = require('express');
 const express = require('express');
