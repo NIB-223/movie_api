@@ -4,7 +4,9 @@ const Models = require('./models.js');
 
 
 //connects mongoose to the db
-mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://usermane21:CdXk3W9UNAH16IXzv7Ca@mycluster.62uci.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 //define schema
 let movieSchema = mongoose.Schema({
