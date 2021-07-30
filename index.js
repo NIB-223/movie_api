@@ -1,5 +1,3 @@
-
-const { check, validationRestult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
@@ -12,6 +10,7 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
+const { check, validationRestult } = require('express-validator');
 
 mongoose.connect('process.env.CONNECTION_URI', {
     useNewUrlParser: true,
