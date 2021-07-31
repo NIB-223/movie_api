@@ -14,20 +14,20 @@
 
 This is a movie API that contains data about certain movies, their genres, and theior directors.  There is also a membership feature where people can create accounts.  
 
-## Tools Used
+
+## Tools/Dependencies Used
+## Tools/Dependencies Used
 - JS
 - MongoDB
-- Express
 - Node.js
-
-## Dependencies
-- Express
-- eslint
-- mongoose
-- body-parser
-- morgan
-
-
+- Express (node.js framework)
+- eslint (code analysis)
+- mongoose (objet modeling)
+- body-parser (HTTP Post handler)
+- morgan (HTTP Request Logger)
+- passport (authentication)
+- bcrypt (password hashing)
+- cors (input validaton)
 
 </body>
 </html>
