@@ -58,7 +58,8 @@ app.get("/", (req, res) => {
 });
 
 //Get a list of all movies
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+// app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies', function (req, res) {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
@@ -81,17 +82,33 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
         });
 });
 
-//Get data about genre by name
-app.get('/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Movies.findOne({ 'Genre.Name': req.params.Name })
+
+//Get movies by genre name  (couldn't figure this one out)
+app.get('movies/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Movies.find({ Title: req.params.Name }) //what documents you want  the systemt to find
         .then((movie) => {
-            res.json(movie.Genre.Description); //only sends back object that contains director's info
+            res.status(201).json(movie.Title);
         })
         .catch((err) => {
             console.error(err);
             res.status(500).send('Error: ' + err);
         });
 });
+
+
+//Get data about genre by name 
+app.get('/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Movies.findOne({ 'Genre.Name': req.params.Name })
+        .then((movie) => {
+            res.json(movie.Genre.Description); //only sends back object that contains genre's info
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+
+
 
 //get data about director by name
 app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {

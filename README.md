@@ -12,10 +12,9 @@
 # MyFlix API
 
 
-This is a movie API that contains data about certain movies, their genres, and theior directors.  There is also a membership feature where people can create accounts.  
+This is a movie API that contains data about certain movies, their genres, and their directors.  There is also a membership feature where people can create accounts.  
 
 
-## Tools/Dependencies Used
 ## Tools/Dependencies Used
 - JS
 - MongoDB
