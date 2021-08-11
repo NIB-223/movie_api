@@ -32,7 +32,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-CORS in express
+// CORS in express
 app.use(cors({
     origin: (origin, callback) => {
         if (!origin) return callback(null, true);
