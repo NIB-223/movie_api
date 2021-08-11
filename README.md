@@ -26,7 +26,8 @@ This is a movie API that contains data about certain movies, their genres, and t
 - morgan (HTTP Request Logger)
 - passport (authentication)
 - bcrypt (password hashing)
-- cors (input validaton)
+- express validator (input validation)
+- cors (origin authentication)
 
 </body>
 </html>

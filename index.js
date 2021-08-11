@@ -1,3 +1,4 @@
+//Cors
 const cors = require('cors');
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234'];
 
@@ -9,6 +10,7 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
+//express validator
 const { check, validationResult } = require('express-validator');
 
 //the database is only accessible locally on my computer
