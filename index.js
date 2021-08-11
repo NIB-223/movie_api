@@ -85,7 +85,7 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
 });
 
 
-//Get movies by genre name  (couldn't figure this one out)
+//Get movies by genre name  
 app.get('movies/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ Title: req.params.Name }) //what documents you want  the systemt to find
         .then((movie) => {
