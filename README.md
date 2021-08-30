@@ -18,6 +18,8 @@ This is a movie API that contains data about certain movies, their genres, and t
 ## Tools/Dependencies Used
 - JS
 - MongoDB
+- MongoAtlas
+- Heroku
 - Node.js
 - Express (node.js framework)
 - eslint (code analysis)
