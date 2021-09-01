@@ -7,6 +7,16 @@
     <title>Documentation</title>
 </head>
 <style>
+  body {
+    margin: 1rem;
+ 
+  }
+  .title {
+    text-align: center;
+  }
+  .table-title {
+    text-align: center;
+  }
   th {
     text-align: center;  
   }
@@ -15,29 +25,27 @@
   }
 </style>
 <body>
-    <header><strong>Documentation | myFlix</strong></header>
-
-    This is a RESTful API that contains data about certain movies, their genres, and their directors.  There is also a membership feature where people can create accounts, post personal info, and add movies to their favorites list.  It was built with the MERN stack.  
+ <header class="title"><h1>Documentation | myFlix</h1></header>
+<div>
+  <h4>ABOUT:</h4>
+   <p>This is a RESTful API that contains data about certain movies, their genres, and their directors.  There is also a membership feature where people can create accounts, post personal info, and add movies to their favorites list. 
+    It was built with the MERN stack. </p> 
+</div>
+   
+  <br>
     
-
-  All Features<br>
+<div>
+    <h4>All Features:</h4>
 - Membership site (users can create and account for free)<br>
 - Members can add or remove movies to or from their favorites list<br>
 - When a movie is clicked, and image, description, genre, director, and a list of primary actors are listed. <br>
 - There is also a button for director info (bio, birthyear etc.) and another button for genre info.<br>
 - Members can deregister if they wish
+</div>
 
-    <br>
-    I did the entire backend and front end:<br>
-    -build databse with MongoDB<br>
-    -set up endpooints and test them<br>
-    -password hashing<br>
-    -input validation<br>
-    -setting up DB on web with Atlas<br>
-    -putting app on web via heroku<br>
-
-
-    <br>Backend Tools/Dependencies:
+<br>
+<div>
+    <h4>Backend Tools/Dependencies:</h4>
     - JS<br>
     - MongoDB<br>
     - MongoAtlas<br>
@@ -53,8 +61,9 @@
     - express validator (input validation)<br>
     - cors (input validaton)<br>
 
-    can be run with "parcel src/index.html<br>
-
+</div>
+  <br>
+<h1 class="table-title">Endpoints</h1>
 <div class="table-responsive">
     <table class="table table-bordered align-middle">
       <thead>
