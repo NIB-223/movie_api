@@ -10,9 +10,13 @@
 <body>
 
 # Overview
-This is a RESTful API that contains data about certain movies, their genres, and their directors.  There is also a membership feature where people can create accounts, post personal info, and add movies to their favorites list.  It was built with the MERN stack.  
-[Read Full Documentation here] (https://myflixdb20.herokuapp.com/documentation.html)
-[Front end repository] (https://github.com/Drxl95/myFlix-client)
+This is the backend to an API I created.  It is a movie-themed with a database that contains a list of movies, direcors, genres, actors, and an abiliy for users to create/delete an account.  It is hosted via heroku and uses JWT authentication
+
+- [Read Full Documentation here](https://myflixdb20.herokuapp.com/documentation.html)
+
+- [Front end repository](https://github.com/Drxl95/myFlix-client)
+
+- [Create an Account and get started!](https://myflix20.netlify.app/)
 
 
 ## Tools/Dependencies Used
