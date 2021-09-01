@@ -15,10 +15,17 @@
   }
 </style>
 <body>
-    <header>Documentation | myFlix</header>
+    <header><strong>Documentation | myFlix</strong></header>
 
-    This is a web application for people interested in movies.  It will feature a database of information inclding  generes, directors etc.  
-    Users will also have the ability to sign up and post personal information along with lists of their favorite movies.
+    This is a RESTful API that contains data about certain movies, their genres, and their directors.  There is also a membership feature where people can create accounts, post personal info, and add movies to their favorites list.  It was built with the MERN stack.  
+    
+
+  All Features
+- Membership site (users can create and account for free)
+- Members can add or remove movies to or from their favorites list
+- When a movie is clicked, and image, description, genre, director, and a list of primary actors are listed. 
+- There is also a button for director info (bio, birthyear etc.) and another button for genre info.
+- Members can deregister if they wish
 
     <br>
     I did the entire backend and front end:<br>
@@ -28,22 +35,25 @@
     -input validation<br>
     -setting up DB on web with Atlas<br>
     -putting app on web via heroku<br>
-    -I learned more about CLIs
-
-    <br>Tools:
-    - JS
-- MongoDB
-- Node.js
-- Express (node.js framework)
-- eslint (code analysis)
-- mongoose (objet modeling)
-- body-parser (HTTP Post handler)
-- morgan (HTTP Request Logger)
-- passport (authentication)
-- bcrypt (password hashing)
-- cors (input validaton)
 
 
+    <br>Backend Tools/Dependencies:
+    - JS<br>
+    - MongoDB<br>
+    - MongoAtlas<br>
+    - Heroku<br>
+    - Node.js<br>
+    - Express (node.js framework)<br>
+    - eslint (code analysis)<br>
+    - mongoose (objet modeling)<br>
+    - body-parser (HTTP Post handler)<br>
+    - morgan (HTTP Request Logger)<br>
+    - passport (authentication)<br>
+    - bcrypt (password hashing)<br>
+    - express validator (input validation)<br>
+    - cors (input validaton)<br>
+
+    can be run with "parcel src/index.html<br>
 
 <div class="table-responsive">
     <table class="table table-bordered align-middle">
