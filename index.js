@@ -266,7 +266,7 @@ app.delete('/users/:Username/FavoriteMovies/:movieID', passport.authenticate('jw
                 console.error(err);
                 res.status(500).send('Error: ' + err);
             } else {
-                res.json(updatedUser); l
+                res.json(updatedUser);
             }
         });
 });
