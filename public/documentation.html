@@ -80,7 +80,7 @@
               <tr class="table align-middle">
                   <td>Get a list of all movies</td>
                   <td>/movies</td>
-                  <td>GET</td>
+                  <td style="color: green; font-weight: 700;">GET</td>
                   <td>None</td>
                   <td style="text-decoration: underline;">A JSON object holding data about all movies.</td>
               </tr>
@@ -89,7 +89,7 @@
                 <tr class="table align-middle">
                   <td>Return data about a movie by title</td>
                   <td>/movies/[title]</td>
-                  <td>GET</td>
+                  <td style="color: green; font-weight: 700;">GET</td>
                   <td>None</td>
                   <td><span  style="text-decoration: underline;">JSON object holding data about a single movie.</span>  <br><br><span style="text-decoration: underline;">Example:</span><br>
                     "Genre": {<br>
@@ -118,7 +118,7 @@
                 <tr class="table align-middle">
                   <td>Get data about genre by title</td>
                   <td>/genres/[Name]</td>
-                  <td>GET</td>
+                  <td style="color: green; font-weight: 700;">GET</td>
                   <td>None</td>
                   <td><span  style="text-decoration: underline;">JSON object holding data about a genre. </span><br><br><span style="text-decoration: underline;">Example:</span><br>
                   "Genre": {<br>
@@ -143,7 +143,7 @@
                 <tr class="table align-middle">
                   <td>get data about director by name</td>
                   <td>/directors/[name]</td>
-                  <td>GET</td>
+                  <td style="color: green; font-weight: 700;">GET</td>
                   <td>None</td>
                   <td><span  style="text-decoration: underline;">JSON object holding info on a director's info (Name, Bio, Birth.) </span><br><br><span style="text-decoration: underline;">Example:</span><br>
                     "Genre": {<br>
@@ -164,14 +164,13 @@
                   "Judd Apatow": {<br>
                       "Bio": "His movies are very funny."<br>
                   }<br>
-                                             
                   </td>
                 </tr>
 
               <tr class="table align-middle">
                 <td>Get a list of all users</td>
                 <td>/users</td>
-                <td>GET</td>
+                <td style="color: green; font-weight: 700;">GET</td>
                 <td>None</td>
                 <td><span style="text-decoration: underline;">A JSON object holding data about all users.</span> <br><br><span style="text-decoration: underline;">Example:</span><br>
                 [<br>
@@ -236,7 +235,7 @@
               <tr class="table align-middle">
                 <td>Get user by Username</td>
                 <td>/users/[Username]</td>
-                <td>GET</td>
+                <td style="color: green; font-weight: 700;">GET</td>
                 <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about user.</span><br><br><span style="text-decoration: underline;">Example:</span><br>
                   { <br>
                     "FavoriteMovies": [],<br>
@@ -252,7 +251,7 @@
                 <tr class="table align-middle">
                   <td>New users can register</td>
                   <td>/users</td>
-                  <td>POST</td>
+                  <td style="color: goldenrod; font-weight: 700;">POST</td>
                   <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about the user to add.</span> <br><br><span style="text-decoration: underline;">Example:</span><br>
                      {<br>
                            Username: "johnnycage19"<br>
@@ -279,7 +278,7 @@
                 <tr class="table align-middle">
                   <td>users update their info by username</td>
                   <td>/users/[username]</td>
-                  <td>PUT</td>
+                  <td style="color: blue; font-weight: 700;">PUT</td>
                   <td style="text-align: left!important;"><span style="text-decoration: underline;">A JSON object holding data about user's updated info.</span><br><br><span style="text-decoration: underline;">Example:</span><br>
                     {<br>
                       "Username" : "johnnycage19",<br>
@@ -303,7 +302,7 @@
                 <tr class="table align-middle">
                   <td>users add movie to fav list</td>
                   <td>/users/[Username]/FavoriteMovies/[movieID]</td>
-                  <td>POST</td>
+                  <td style="color: goldenrod; font-weight: 700;">POST</td>
                   <td style="text-align: left!important;"><span style="text-decoration: underline;">JSON object holding data about user's fav movie to be added.</span><br><br><span style="text-decoration: underline;">Example:</span><br>
                                                                  
                                                                   {<br>
@@ -330,7 +329,7 @@
                 <tr class="table align-middle">
                   <td>users remove movie from fav list</td>
                   <td>/users/[Username]/FavoriteMovies/[movieID]</td>
-                  <td>DELETE</td>
+                  <td style="color: red; font-weight: 700;">DELETE</td>
                   <td>None</td>
                   <td>        {<br>
                     "FavoriteMovies": [<br>
@@ -350,7 +349,7 @@
                 <tr class="table align-middle">
                   <td>users deregister</td>
                   <td>/users/[Username]</td>
-                  <td>DELETE</td>
+                  <td style="color: red; font-weight: 700;">DELETE</td>
                   <td>None</td>
                   <td><span style="text-decoration: underline;">A message saying user has been removed.</span></td>
                 </tr>
