@@ -1,6 +1,6 @@
 //Cors
 const cors = require('cors');
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflix20.netlify.app', 'http://localhost:4200'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflix20.netlify.app', 'http://localhost:4200', 'http://localhost:4200/movies',];
 
 
 const mongoose = require('mongoose');
