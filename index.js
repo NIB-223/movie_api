@@ -10,6 +10,7 @@ let allowedOrigins = [
     "http://localhost:4200",
     "http://localhost:4200/",
     "https://localhost:4200",
+    "https://drxl95.github.io/myFlix-Angular/",
 ];
 
 
