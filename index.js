@@ -1,3 +1,4 @@
+
 //Cors
 const cors = require('cors');
 let allowedOrigins = [
@@ -24,12 +25,6 @@ const Users = Models.User;
 
 //express validator
 const { check, validationResult } = require('express-validator');
-
-//the database is only accessible locally on my computer
-/* mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true}); */
-
-//connect database on the web
-// mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const { response } = require('express');
 const express = require('express');
@@ -73,7 +68,12 @@ app.get("/", (req, res) => {
     res.send('Hello and Welcome to myFlix!');
 });
 
-//Get a list of all movies
+/**
+ * Get a list of all movies
+ * @method GETmovies
+ * @returns {Array} - returns list of movies 
+ * @requires authentication JWT
+ */
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
         .then((movies) => {
@@ -85,7 +85,14 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
         });
 });
 
-//Get data about a movie by title
+
+/** 
+ * Get data about a movie by title
+ * @method GETmoviebytitle
+ * @param {string} Title - title of the movie
+ * @returns {object} - returns the movie with a specific title
+ * @requires authentication JWT
+ */
 app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.findOne({ Title: req.params.Title })
         .then((movie) => {
@@ -98,7 +105,13 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
 });
 
 
-//Get movies by genre name  
+/**
+ * Get movies by genre name 
+ * @method GETmoviesbygenre
+ * @param {string} Name - name of the genre
+ * @returns {Array} - returns a list of movies by genre name
+ * @requires authentication JWT
+ */
 app.get('movies/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ Title: req.params.Name }) //what documents you want  the systemt to find
         .then((movie) => {
@@ -111,7 +124,13 @@ app.get('movies/genres/:Name', passport.authenticate('jwt', { session: false }),
 });
 
 
-//Get data about genre by name 
+/**
+ * Get data about genre by name 
+ * @method GETgenreInfoByName
+ * @param {string} Name name of the genre
+ * @returns {object} - returns and object containing information about a genre
+ * @requires authentication JWT
+ */
 app.get('/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.findOne({ 'Genre.Name': req.params.Name })
         .then((movie) => {
@@ -124,8 +143,13 @@ app.get('/genres/:Name', passport.authenticate('jwt', { session: false }), (req,
 });
 
 
-
-//get data about director by name
+/**
+ * get data about director by name
+ * @method GETdirectorDataByName
+ * @param {string} Name Name of Director
+ * @returns {object} - returns an object containing information about a director
+ * @requires authentication JWT
+ */
 app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.findOne({ 'Director.Name': req.params.Name })
         .then((movie) => {
@@ -137,7 +161,12 @@ app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (r
         });
 });
 
-// Get all users
+/**
+ * get all users
+ * @method GETallUsers
+ * @returns {Array} - returns an array of all users 
+ * @requires authentication JWT
+ */
 app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.find()
         .then((users) => {
@@ -149,7 +178,13 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
         });
 });
 
-// Get a user by username
+/**
+ * get a user by username
+ * @method GETuserByUsername
+ * @param {string} Username Name of user's acct.
+ * @returns {object} - returns an object containing user info
+ * @requires authentication JWT
+ */
 app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOne({ Username: req.params.Username })
         .then((user) => {
@@ -162,9 +197,17 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
 });
 
 
-//add user (regist)
+/**
+ * registers user (POST)
+ * @method RegisterUser
+ * @param {string} Username - user chooses allowed username
+ * @param {string} Password - user chooses allowed password
+ * @param {string} Email - user enters valid email
+ * @param {string} Birthday - user enters their birthdate
+ * @returns {object} - adds user info (account) to database
+ */
 app.post('/users',
-    // Validation logic here for request
+    // Validation (express-validator) logic here for request
     //you can either use a chain of methods like .not().isEmpty()
     //which means "opposite of isEmpty" in plain english "is not empty"
     //or use .isLength({min: 5}) which means
@@ -210,7 +253,17 @@ app.post('/users',
             });
     });
 
-//user updates their info
+
+/**
+ * updates user info (PUT)
+ * @method UpdateUserInfo
+ * @param {string} Username - user changes username
+ * @param {string} Password - user changes password
+ * @param {string} Email - user changes email
+ * @param {string} Birthday - user changes birthdate
+ * @returns {object} - changes user info in database
+ * @requires authentication JWT
+ */
 app.put('/users/:Username',
     [
         check('Username', 'Username is required').isLength({ min: 5 }),
@@ -251,7 +304,14 @@ app.put('/users/:Username',
     });
 
 
-//user adds movie to favorites list
+/**
+ * user adds movie to favorites list (POST)
+ * @method ADDfavMovie
+ * @param {String} Username name of user's account
+ * @param {String} movieID identication code for movie
+ * @return {Array} - list of favorite movies
+ * @requires authentication JWT 
+ */
 app.post('/users/:Username/FavoriteMovies/:movieID', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOneAndUpdate({ Username: req.params.Username }, {
         $push: { FavoriteMovies: req.params.movieID }
@@ -267,7 +327,14 @@ app.post('/users/:Username/FavoriteMovies/:movieID', passport.authenticate('jwt'
         });
 });
 
-//user removes movie from favorites list
+
+/**
+ * user removes movie from favorites list (DELETE)
+ * @method DELETEfavMovie
+ * @param {String} Username name of user's account
+ * @param {String} movieID identication code for movie
+ * @requires authentication JWT 
+ */
 app.delete('/users/:Username/FavoriteMovies/:movieID', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOneAndUpdate({ Username: req.params.Username }, {
         $pull: { FavoriteMovies: req.params.movieID }
@@ -283,7 +350,12 @@ app.delete('/users/:Username/FavoriteMovies/:movieID', passport.authenticate('jw
         });
 });
 
-//user deregisters
+/**
+ * user deletes account (DELETE)
+ * @method DELETEaccount
+ * @param {String} Username name of user's account 
+ * @requires authentication JWT 
+ */
 app.delete('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOneAndRemove({ Username: req.params.Username })
         .then((user) => {
